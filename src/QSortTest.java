@@ -69,19 +69,19 @@ class QSortTest {
 
 				m = 1;
 				System.out.println("m = " + m);
-				QSortTooSlow.quicksort(seq, m);
+				QSort.quicksort(seq, m);
 				checkOrder(seq);
 				writeSequence(seq);
 
 				m = 10;
 				System.out.println("m = " + m);
-				QSortTooSlow.quicksort(cpy1, m);
+				QSort.quicksort(cpy1, m);
 				checkOrder(cpy1);
 				writeSequence(cpy1);
 
 				m = 300;
 				System.out.println("m = " + m);
-				QSortTooSlow.quicksort(cpy2, m);
+				QSort.quicksort(cpy2, m);
 				checkOrder(cpy2);
 				writeSequence(cpy2);
 
@@ -103,7 +103,7 @@ class QSortTest {
 					for (int k = 1; k <= iter; k++) {
 						System.arraycopy(seq, 0, cpy1, 0, cpy1.length);
 						start = getUserTime();
-						QSortTooSlow.quicksort(cpy1, m);
+						QSort.quicksort(cpy1, m);
 						diff = getUserTime() - start;
 						t = t + diff;
 					}
@@ -115,7 +115,9 @@ class QSortTest {
 				}
 			}
 		} else { // no flags
-			System.out.println("Usage: java QSortTest [-d|-s]");
+
+		        System.out.println("Usage: java QSortTest [-d|-s]");
+
 		}
 	}
 }
